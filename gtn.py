@@ -1,22 +1,11 @@
-"""
-Guess the number!
-Generate X
-+ or - while user doesn't win
-You can select number of attempts
-Easy = 5
-Medium = 3
-Hard = 1
-"""
-
 import random
-import sys
 
 def play():
     print """\
     ************************************
     * "Guess the number" welcomes you! *
     *                                  *
-    *        Difficulty Levels:        * 
+    *        Difficulty Levels:        *
     *                                  *
     *  1 - Easy (you have 5 attempt)   *
     *  2 - Normal (you have 3 attempt) *
@@ -25,26 +14,35 @@ def play():
     *             Let's go!            *
     ************************************
     """
-#   print ("Select Difficulty Level:")
-#   dif = input()
-    
+    lvl = input("Select Difficulty Level: ")
+    if lvl == 1:
+        lvl = 5
+    elif lvl == 2:
+        lvl = 3
+    elif lvl == 3:
+        lvl = 1
+
     num = random.randrange(1,10)
     x = 0
-    
+
     while num != x:
-        print ("Enter your number:")
-        x = input()
-        if num > x:
-            print ("It's bigger!\n")
-        if num < x:
-            print ("It's smaller!\n")
-        pass
-    
+        if lvl == 0:
+            print ("You lose.\n")
+#            gameover()
+            return
+        else:
+            x = input("Enter your number: ")
+            if num > x:
+                print ("It's bigger!\n")
+            if num < x:
+                print ("It's smaller!\n")
+            pass
+            lvl = lvl - 1
+
     print ("You win!")
     print num
 
-def main():
-    play()
+def gameover():
     while True:
         restart = input("Would you like to play again? Please enter '1' for YES or '2' for NO: ")
         if restart==1:
@@ -52,4 +50,9 @@ def main():
         else:
             print "Thanks for playing!"
             break
+
+def main():
+    play()
+    gameover()
+
 main()
