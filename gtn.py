@@ -2,6 +2,7 @@ import random
 
 
 def play():
+    global attempt
     print("""\
     *************************************
     *  "Guess the number" welcomes you! *
@@ -15,20 +16,30 @@ def play():
     *             Let's go!             *
     *************************************
     """)
-    lvl = int(input("Select Difficulty Level: "))
-    if lvl == 1:
-        lvl = 5
-    elif lvl == 2:
-        lvl = 3
-    elif lvl == 3:
-        lvl = 1
+    while True:
+        try:
+            diff = int(input("Select Difficulty Level: "))
+        except ValueError:
+            print("Wrong number!")
+            continue
+        else:
+            if diff < 0 or diff > 3:
+                print("Wrong number!")
+                continue
+            if diff == 1:
+                attempt = 5
+            elif diff == 2:
+                attempt = 3
+            elif diff == 3:
+                attempt = 1
+            break
 
     num = random.randrange(1, 10)
     x = 0
 
     while num != x:
-        if lvl == 0:
-            print("The number is", num)
+        if attempt == 0:
+            print("The number is", str(num) + ".")
             print("You lose.\n")
             return
         else:
@@ -37,11 +48,10 @@ def play():
                 print("It's bigger!\n")
             if num < x:
                 print("It's smaller!\n")
-            pass
-            lvl -= 1
+            attempt -= 1
 
+    print("The number is", str(num) + ".")
     print("You win!")
-    print(num)
 
 
 def game_over():
