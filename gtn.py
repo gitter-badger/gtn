@@ -10,7 +10,16 @@ Hard = 1
 
 import random
 
-print ("\"Guess the number\" welcomes you!\nYou have 3 attempts!\nLet's go!")
+print """\
+*********************************
+* Guess the number welcomes you!*
+*                               *
+*      You have 3 attempts!     *
+*                               *
+*          Let's go!            *
+*********************************
+"""
+
 num = random.randrange(1,10)
 
 print ("Enter your number:")
