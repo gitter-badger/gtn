@@ -1,7 +1,7 @@
 import random
 
 def play():
-    print """\
+    print ("""\
     *************************************
     *  "Guess the number" welcomes you! *
     *                                   *
@@ -13,8 +13,8 @@ def play():
     *                                   *
     *             Let's go!             *
     *************************************
-    """
-    lvl = input("Select Difficulty Level: ")
+    """)
+    lvl = int(input("Select Difficulty Level: "))
     if lvl == 1:
         lvl = 5
     elif lvl == 2:
@@ -30,7 +30,7 @@ def play():
             print ("You lose.\n")
             return
         else:
-            x = input("Enter your number: ")
+            x = int(input("Enter your number: "))
             if num > x:
                 print ("It's bigger!\n")
             if num < x:
@@ -39,15 +39,15 @@ def play():
             lvl = lvl - 1
 
     print ("You win!")
-    print num
+    print (num)
 
 def gameover():
     while True:
-        restart = input("Would you like to play again? Please enter '1' for YES or '2' for NO: ")
+        restart = int(input("Would you like to play again? Please enter '1' for YES or '2' for NO: "))
         if restart==1:
             play()
         else:
-            print "Thanks for playing!"
+            print ("Thanks for playing!")
             break
 
 def main():
