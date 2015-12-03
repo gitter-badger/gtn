@@ -2,17 +2,17 @@ import random
 
 def play():
     print """\
-    ************************************
-    * "Guess the number" welcomes you! *
-    *                                  *
-    *        Difficulty Levels:        *
-    *                                  *
-    *  1 - Easy (you have 5 attempt)   *
-    *  2 - Normal (you have 3 attempt) *
-    *  3 - Hard (you have 1 attempt)   *
-    *                                  *
-    *             Let's go!            *
-    ************************************
+    *************************************
+    *  "Guess the number" welcomes you! *
+    *                                   *
+    *         Difficulty Levels:        *
+    *                                   *
+    *  1 - Easy (you have 5 attempts)   *
+    *  2 - Normal (you have 3 attempts) *
+    *  3 - Hard (you have 1 attempt)    *
+    *                                   *
+    *             Let's go!             *
+    *************************************
     """
     lvl = input("Select Difficulty Level: ")
     if lvl == 1:
@@ -28,7 +28,6 @@ def play():
     while num != x:
         if lvl == 0:
             print ("You lose.\n")
-#            gameover()
             return
         else:
             x = input("Enter your number: ")
