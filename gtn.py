@@ -2,7 +2,7 @@ import random
 
 
 def play():
-    global attempt
+    """Contains the game process"""
     print("""\
     *************************************
     *  "Guess the number" welcomes you! *
@@ -23,7 +23,7 @@ def play():
             print("Wrong number!")
             continue
         else:
-            if diff < 0 or diff > 3:
+            if not (0 < diff < 4):
                 print("Wrong number!")
                 continue
             if diff == 1:
@@ -55,17 +55,18 @@ def play():
 
 
 def game_over():
+    """Ask user for replay or quit"""
     while True:
-        restart = int(input("Would you like to play again? Please enter '1' for YES or '2' for NO: "))
-        if restart == 1:
+        restart = input("Would you like to play again? (y/n):\n")
+        if restart == 'y':
             play()
-        else:
+        elif restart == 'n':
             print("Thanks for playing!")
             break
+        else:
+            print("Wrong answer!")
+            continue
 
-
-def main():
+if __name__ == "__main__":
     play()
     game_over()
-
-main()
