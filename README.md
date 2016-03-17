@@ -1,4 +1,6 @@
 # Guess the number!
+
+[![Join the chat at https://gitter.im/valsaven/gtn](https://badges.gitter.im/valsaven/gtn.svg)](https://gitter.im/valsaven/gtn?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://drone.io/github.com/valsaven/gtn/status.png)]
 (https://drone.io/github.com/valsaven/gtn/latest)
 [![Code Health](https://landscape.io/github/valsaven/gtn/master/landscape.svg?style=flat)](https://landscape.io/github/valsaven/gtn/master)
